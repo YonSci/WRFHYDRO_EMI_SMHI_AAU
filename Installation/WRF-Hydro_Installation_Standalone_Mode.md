@@ -14,3 +14,15 @@ mkdir Libs/NETCDF
 mkdir Libs/grib2
 mkdir Libs/MPICH
 tree -d
+```
+
+
+## Download Libraries
+### Download zlib Library
+
+```bash
+wget -c -4 https://github.com/madler/zlib/archive/refs/tags/v1.2.12.tar.gz
+```
+
+### Download HDF Library
+

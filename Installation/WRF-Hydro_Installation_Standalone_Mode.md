@@ -158,26 +158,43 @@ make install
 
 ```bash
 cd ..
+# LDFLAGS Environment variable specifies the directory for the linker to look for libraries & -L flag tells the linker where to find library files
 export LDFLAGS=-L$DIR/grib2/lib
+# Setting the Include Path: environment variable is used to specify additional preprocessor flags & -I flag tells the preprocessor where to look for header files.
 export CPPFLAGS=-I$DIR/grib2/include
+# Extracting the libpng Archive:
 tar -xvzf libpng-1.6.37.tar.gz
+# Changing Directory
 cd libpng-1.6.37/
+# Configuring the Build: Configures the source code for compilation & Sets the installation directory. 
 ./configure --prefix=$DIR/grib2
+# Building the Software
 make
+# Installing the Software
 make install
 ```
 
 ### Install Jasper
 
 ```bash
+# Changing Directory
 cd ..
+# Unzipping the Archive
 unzip jasper-1.900.1.zip
+# Changing Directory
 cd jasper-1.900.1/
+# Running autoreconf: Rebuilds the configure script and other auto-generated files. This is typically required when the source does not include a configure script or when you need to regenerate it due to system-specific requirements.
+# The -i option stands for --install, which installs any missing files (like config.sub and config.guess) necessary for building on different architectures.
 autoreconf -i
+# Configuring the Build
 ./configure --prefix=$DIR/grib2
+# Building the Library:
 make
+# Installing the Library:
 make install
+# Sets JASPERLIB to the path where the compiled jasper libraries are installed.
 export JASPERLIB=$DIR/grib2/lib
+# Sets JASPERINC to the path where the jasper header files are located.
 export JASPERINC=$DIR/grib2/include
 ```
 
@@ -185,12 +202,25 @@ export JASPERINC=$DIR/grib2/include
 ### Install MPICH
 
 ```bash
+# Changing Directory
 cd ..
+# Extracting the Archive
+Options:
+-x: Extracts the files.
+-v: Verbose mode, which displays the names of files as they are extracted.
+-z: Specifies that the archive is compressed with gzip.
+-f: Indicates that the following string is the name of the file.
 tar -xvzf mpich-4.0.2.tar.gz
+# Changing Directory
 cd mpich-4.0.2/
+# Configuring the Build: Runs the configuration script to set up the build environment.
 F90= ./configure --prefix=$DIR/MPICH --with-device=ch3 FFLAGS=$fallow_argument FCFLAGS=$fallow_argument
+# --with-device=ch3: Specifies the communication device for MPI. Here, ch3: which is the default device for MPICH. The ch3 device provides support for various communication channels, typically including TCP.
+# Building the Software
 make
+# Installing the Software
 make install
+# Seth the MPICH bin into the PATH
 export PATH=$DIR/MPICH/bin:$PATH
 ```
 

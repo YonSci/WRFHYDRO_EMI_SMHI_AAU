@@ -22,7 +22,7 @@ tree -d
 
 ```bash
 ### Change Directory:
-cd /Downloads
+cd Downloads
 ```
 
 ```bash
@@ -126,6 +126,11 @@ Note: This checks if the compiler versions are 10 or higher. If yes, it sets spe
 
 ## Pass Flags to Fortran Compilers
 
+Note: 
+
+- FFLAGS is typically used for general Fortran compilation flags.
+- FCFLAGS is  flags specifically for the Fortran compiler.
+  
 ```bash
 export FFLAGS="$fallow_argument"
 export FCFLAGS="$fallow_argument"

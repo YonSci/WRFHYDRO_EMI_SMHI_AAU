@@ -27,12 +27,12 @@ Before beginning the installation, ensure that you have:
 
 - Required Libraries and Software: The WRF-Hydro model relies on several libraries to manage data processing and high-performance computation. Key libraries include:
 
-- zlib: Provides compression capabilities, crucial for data handling in HDF5 and netCDF.
-- HDF5: A hierarchical data format, essential for managing large data sets commonly found in scientific applications.
-- netCDF: The network Common Data Form, which facilitates data sharing among scientific communities.
-- MPICH: An implementation of the Message Passing Interface (MPI) standard, required for parallel processing capabilities.
-- libpng: Enables PNG image support, used within visualization tools associated with WRF-Hydro.
-- Jasper: Provides support for JPEG 2000 compression.
+  - zlib: Provides compression capabilities, crucial for data handling in HDF5 and netCDF.
+  - HDF5: A hierarchical data format, essential for managing large data sets commonly found in scientific applications.
+  - netCDF: The network Common Data Form, which facilitates data sharing among scientific communities.
+  - MPICH: An implementation of the Message Passing Interface (MPI) standard, required for parallel processing capabilities.
+  - libpng: Enables PNG image support, used within visualization tools associated with WRF-Hydro.
+  - Jasper: Provides support for JPEG 2000 compression.
 
 Each library will be configured, built, and installed with specific flags to ensure compatibility with WRF-Hydro’s requirements.
 
@@ -554,7 +554,7 @@ ncdump -h 201108260000.LDASOUT_DOMAIN1
 
 Congratulations on completing the installation and configuration of the WRF-Hydro model in standalone mode! With the successful installation of the necessary libraries and compilation of the model using the Noah-MP Land Surface Model, you now have a powerful tool at your disposal for hydrological modeling and analysis.
 
-## Summary: 
+## Summary
 
 Throughout this guide, you have:
 

@@ -1,4 +1,49 @@
-# WRF-Hydro Model Installation in Standalone Mode
+# Guide for WRF-Hydro Model Installation in Standalone Mode
+
+The WRF-Hydro an open-source community model, is used for a range of projects, including flash flood prediction, regional hydroclimate impacts assessment, seasonal forecasting of water resources, and land-atmosphere coupling studies. Initially developed by the National Center for Atmospheric Research (NCAR), WRF-Hydro supports various hydrologic applications, from flood forecasting to long-term water resource management. This guide provides step-by-step instructions for installing WRF-Hydro in Standalone Mode using the Noah-MP Land Surface Model, which enables it to run independently of the WRF atmospheric model.
+
+## About this Guide
+
+This installation guide is designed to help users:
+
+1) Set up a working environment for compiling and running the WRF-Hydro model in standalone mode.
+
+2) Download and install the necessary dependencies and libraries, such as zlib, HDF5, netCDF, MPICH, and others that enable WRF-Hydro’s high-performance and scientific capabilities.
+3)  Configure and compile the WRF-Hydro model using specific compilation flags for optimized performance.
+
+4) Run a test simulation using the Croton_NY test case as an example.
+
+## Prerequisites
+
+Before beginning the installation, ensure that you have:
+
+1) A Linux-based system with a Bash shell environment.
+
+2) Root or sudo access to install dependencies.
+
+3) Familiarity with basic command-line operations, as well as experience in managing software installations on Linux.
+
+4) Essential build tools installed, such as gcc, g++, and make. Additional compilers for Fortran are also required (gfortran is recommended).
+
+- Required Libraries and Software: The WRF-Hydro model relies on several libraries to manage data processing and high-performance computation. Key libraries include:
+
+- zlib: Provides compression capabilities, crucial for data handling in HDF5 and netCDF.
+- HDF5: A hierarchical data format, essential for managing large data sets commonly found in scientific applications.
+- netCDF: The network Common Data Form, which facilitates data sharing among scientific communities.
+- MPICH: An implementation of the Message Passing Interface (MPI) standard, required for parallel processing capabilities.
+- libpng: Enables PNG image support, used within visualization tools associated with WRF-Hydro.
+- Jasper: Provides support for JPEG 2000 compression.
+
+Each library will be configured, built, and installed with specific flags to ensure compatibility with WRF-Hydro’s requirements.
+
+## Model Configurations
+
+This guide will walk you through setting up the Noah-MP Land Surface Model configuration. The Noah-MP configuration provides an advanced representation of soil, vegetation, and snowpack processes, and it supports standalone simulations driven by predefined meteorological data. By setting specific flags, such as SPATIAL_SOIL and WRFIO_NCD_LARGE_FILE_SUPPORT, this setup maximizes WRF-Hydro’s capabilities for handling high-resolution datasets and complex environmental processes.
+
+## Running WRF-Hydro
+Once installation is complete, this guide includes instructions for downloading, setting up, and running a sample test case (Croton_NY). The test case demonstrates the essential model operations and verifies that the installation is functioning as expected. It will also help familiarize you with WRF-Hydro’s input and output file structure.
+
+With this guide, you will be ready to leverage WRF-Hydro for hydrological research, forecasting, and operational applications in standalone mode.
 
 ## Create Directory Structure
 ```bash
@@ -505,9 +550,21 @@ ncdump -h 201108260000.LDASOUT_DOMAIN1
 ```
 
 
+## Conclusion
 
+Congratulations on completing the installation and configuration of the WRF-Hydro model in standalone mode! With the successful installation of the necessary libraries and compilation of the model using the Noah-MP Land Surface Model, you now have a powerful tool at your disposal for hydrological modeling and analysis.
 
+## Summary: 
 
+Throughout this guide, you have:
+
+1) Set up a dedicated environment for compiling WRF-Hydro, ensuring that all dependencies are properly installed.
+2) Configured essential libraries, including zlib, HDF5, netCDF, MPICH, and others, with specific flags to optimize performance for WRF-Hydro.
+3) Modified configuration files, such as setEnvar.sh, to enable specific model functionalities, including support for large NetCDF files and spatial soil modeling.
+4) Compiled WRF-Hydro offline, allowing it to run independently of atmospheric models, ideal for hydrological and land surface simulations driven by predefined meteorological data.
+5) Successfully run a test case with the Croton_NY dataset, confirming that the installation was successful and that the model is operational.
+
+"Happy modeling, and may your simulations provide valuable insights into the hydrological processes you seek to understand!"
 
 
 
